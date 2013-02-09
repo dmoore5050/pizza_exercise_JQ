@@ -1,0 +1,12 @@
+body {
+	font-family: helvetica;
+}
+
+#test_outer {
+	width: 180px;
+	border-bottom: 2px solid black;
+}
+#test {
+	color: red;
+	margin: 5px;
+}
