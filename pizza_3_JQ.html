@@ -21,17 +21,19 @@
             var crustType = document.forms["pizzaform"].crust;
             var crustlength = crustType.length;
 
-            for (var i = 0; i < crustlength; i++) {
-                if (crustType[i].checked) {
-                    $('#order').append('<li>' + crustType[i].value + ' Crust </li>');
+            $(".crust").each(function(index) {
+                if ($('input#crust' + (index + 1)).is(':checked')) {
+                    var crust_val = $(this).val();
+                    $('#order').append('<li>' + crust_val + ' Crust </li>');
                 }
-            }
+            })
 
-            for (var i = 0; i < checkboxes; i++) {
-                if (checkVar[i].checked) {
-                    $('#order').append('<li>' + checkVar[i].value + '</li>');
+            $(".topping").each(function(index) {
+                if ($('input#topping' + (index + 1)).is(':checked')) {
+                    var top_val = $(this).val();
+                    $('#order').append('<li>' + top_val + '</li>');
                 }
-            }
+            })
         });
     }); </script>
 </head>
@@ -40,39 +42,38 @@
 <table>
 <tr><td>Toppings</td><td>Crust</td></tr>
 <tr>
-<td><input type="checkbox" id="topping1" value="Sausage" 
+<td><input id="topping1" class="topping" type="checkbox" value="Sausage" 
 name="toppingcheck">Sausage</td>
-<td><input type="radio" name="crust" value="Regular" 
-checked="checked" id="radio1">Regular</td>
+<td><input id="crust1" class="crust" type="radio" name="crust" value="Regular" 
+checked="checked">Regular</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping2" value="Pepperoni" 
+<td><input id="topping2" class="topping" type="checkbox" value="Pepperoni" 
 name="toppingcheck">Pepperoni</td>
-<td><input type="radio" name="crust" value="Deep Dish" 
-id="radio2" />Deep Dish</td>
+<td><input id="crust2" class="crust" type="radio" name="crust" value="Deep Dish">Deep Dish</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping3" value="Ham" 
+<td><input id="topping3" class="topping" type="checkbox" value="Ham" 
 name="toppingcheck">Ham</td>
-<td><input type="radio" name="crust" value="Thin" id="radio3">Thin</td>
+<td><input id="crust3" class="crust" type="radio" name="crust" value="Thin">Thin</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping4" value="Green Peppers" 
+<td><input id="topping4" class="topping" type="checkbox" value="Green Peppers" 
 name="toppingcheck">Green Peppers</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping5" value="Mushrooms" 
+<td><input id="topping5" class="topping" type="checkbox" value="Mushrooms" 
 name="toppingcheck">Mushrooms</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping6" value="Onions" 
+<td><input id="topping6" class="topping" type="checkbox" value="Onions" 
 name="toppingcheck">Onions</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping7" value="Pineapple" 
+<td><input id="topping7" class="topping" type="checkbox" value="Pineapple" 
 name="toppingcheck">Pineapple</td>
 <td></td>
 </tr>
