@@ -12,20 +12,23 @@
 
         $('#prepBtn').click(function () {
 
+            //Writes text into <p id="announce"> element
             $('#announce').text('This pizza will have:');
+            //clears all html content from #order.
             $('#order').html('');
 
-            $(".crust").each(function(index) {
-                if ($('input#crust' + (index + 1)).is(':checked')) {
-                    var crust_val = $(this).val();
-                    $('#order').append('<li>' + crust_val + ' Crust </li>');
+            //cycles through all members of .crust class...
+            $(".crust").each(function(index) { 
+                //if the input of given crust item is checked...
+                if ($('input#crust' + (index + 1)).is(':checked')) { 
+                    //append text + value as an <li> to parent element #order.
+                    $('#order').append('<li>' + $(this).val() + ' Crust </li>');
                 }
             });
 
             $(".topping").each(function(index) {
                 if ($('input#topping' + (index + 1)).is(':checked')) {
-                    var top_val = $(this).val();
-                    $('#order').append('<li>' + top_val + '</li>');
+                       $('#order').append('<li>' + $(this).val() + '</li>');
                 }
             });
         });
