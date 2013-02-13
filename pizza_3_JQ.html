@@ -15,25 +15,19 @@
             $('#announce').text('This pizza will have:');
             $('#order').html('');
 
-            var checkVar = document.forms["pizzaform"].toppingcheck;
-            var checkboxes = checkVar.length;
-
-            var crustType = document.forms["pizzaform"].crust;
-            var crustlength = crustType.length;
-
             $(".crust").each(function(index) {
                 if ($('input#crust' + (index + 1)).is(':checked')) {
                     var crust_val = $(this).val();
                     $('#order').append('<li>' + crust_val + ' Crust </li>');
                 }
-            })
+            });
 
             $(".topping").each(function(index) {
                 if ($('input#topping' + (index + 1)).is(':checked')) {
                     var top_val = $(this).val();
                     $('#order').append('<li>' + top_val + '</li>');
                 }
-            })
+            });
         });
     }); </script>
 </head>
